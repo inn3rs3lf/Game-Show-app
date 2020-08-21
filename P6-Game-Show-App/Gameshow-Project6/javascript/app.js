@@ -19,16 +19,16 @@ const getRandomPhraseAsArray = arr => {
 };
 const randomLetter = getRandomPhraseAsArray(phrases).split('');
 
-// adds the letters of a string to display
+
 const displayPhrases = arr => {
     const ulPhrase = document.querySelector('#phrase ul'); 
      for (let value of randomLetter) {
         const listPhrase = document.createElement('li');
         listPhrase.textContent = value;
         listPhrase.className = 'letter';
-    //White Space Remove
+
         listPhrase.textContent === ' ' ? listPhrase.className = 'space': null;
-    // Append list    
+  
         ulPhrase.appendChild(listPhrase);
     } 
     return ulPhrase.children;
@@ -49,10 +49,14 @@ const checkLetter = button => {
 };
 
 const liLetter = document.querySelectorAll('.letter')
+
 // check if the game has been won or lost
+
 const checkWin = () => {
     const liShow = document.querySelectorAll('.show')
+
     //When player lose the Game
+
         if(!ol.childElementCount) {
             WinOrLose('lose','You Lose!');
         }   
@@ -99,7 +103,7 @@ qwerty.addEventListener('click', e => {
 const WinOrLose = (condition,textCondition) => {
     display.style.display = '';
     display.className = condition;
-    btnReset.textContent = 'Click Here to Play Again?';
+    btnReset.textContent = 'Do you want to play again?';
     h1.textContent = textCondition;
     display.appendChild(h1);
 }
